@@ -1,0 +1,14 @@
+name: Docker Lint and Build
+on: [push]
+
+jobs:
+  lint:
+    name: Lint Dockerfile
+    runs-on: ubuntu-latest
+    steps:
+        # action to checkout repository
+      - name: Check out the repo
+        uses: actions/checkout@v7
+        # action to use hadolint for linting the Dockerfile
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v3.5.0
