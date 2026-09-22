@@ -1,0 +1,20 @@
+name: Hello World
+# event definition
+on: [push]
+
+jobs:
+  # job definition
+  say-hello:
+    # runner definition
+    runs-on: ubuntu-latest
+
+    steps:
+      # github action definition, more information about the checkout action at https://github.com/actions/checkout
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      # step definition
+      - name: Run a Hello World Script
+        run: |
+          echo "Hello, world!"
+          echo "The current repository branch is ${{ github.ref }}"
